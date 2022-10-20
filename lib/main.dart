@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:html' as html;
 
 import 'package:blockchain_week4_exercise2/meta_info.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -373,6 +374,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
+            NeumorphicButton(
+              onPressed: () => html.window.open(
+                  'https://goerli.etherscan.io/address/${contractAddress}',
+                  'new tab'),
+              child: const Text('Open EtherScan to view history'),
+            )
           ],
         ),
       ),
